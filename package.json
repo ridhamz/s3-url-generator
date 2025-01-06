@@ -1,0 +1,30 @@
+{
+  "name": "s3-url-generator",
+  "version": "1.0.0",
+  "description": "Simple AWS S3 pre-signed URL generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridhamz/s3-url-generator.git"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "presigned",
+    "url",
+    "generator"
+  ],
+  "author": "ridha mezrigui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ridhamz/s3-url-generator/issues"
+  },
+  "homepage": "https://github.com/ridhamz/s3-url-generator#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.722.0",
+    "@aws-sdk/s3-request-presigner": "^3.722.0"
+  }
+}
