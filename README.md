@@ -1,8 +1,3 @@
----
-title: "Welcome to S3 URL Generator"
-description: "Effortlessly generate secure AWS S3 upload and download URLs with this powerful Node.js package."
----
-
 # 🌐 Welcome to **S3 URL Generator**
 
 S3 URL Generator simplifies the process of creating secure, pre-signed URLs for AWS S3 uploads and downloads. Whether you're working on file uploads, downloads, or batch operations, this package streamlines your workflow.
@@ -34,14 +29,17 @@ const urlGenerator = new S3UrlGenerator({
   region: 'us-east-1',
   credentials: {
     accessKeyId: 'YOUR_ACCESS_KEY',
-    secretAccessKey: 'YOUR_SECRET_KEY'
-  }
+    secretAccessKey: 'YOUR_SECRET_KEY',
+  },
 });
 
 // Generate a download URL
 const getDownloadUrl = async () => {
   try {
-    const url = await urlGenerator.getDownloadUrl('my-bucket', 'path/to/file.pdf');
+    const url = await urlGenerator.getDownloadUrl(
+      'my-bucket',
+      'path/to/file.pdf'
+    );
     console.log('Download URL:', url);
   } catch (error) {
     console.error('Error:', error);
@@ -65,10 +63,11 @@ const getUploadUrl = async () => {
 // Generate multiple download URLs
 const getBatchUrls = async () => {
   try {
-    const urls = await urlGenerator.getBatchDownloadUrls(
-      'my-bucket',
-      ['file1.pdf', 'file2.jpg', 'file3.png']
-    );
+    const urls = await urlGenerator.getBatchDownloadUrls('my-bucket', [
+      'file1.pdf',
+      'file2.jpg',
+      'file3.png',
+    ]);
     console.log('Batch URLs:', urls);
   } catch (error) {
     console.error('Error:', error);
